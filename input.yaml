@@ -1,0 +1,4 @@
+dns:
+  domain: test.com.vn
+  type: CNAME
+  target: test-nlb-9b4ecf724acc7e90.elb.ap-southeast-1.amazonaws.com
