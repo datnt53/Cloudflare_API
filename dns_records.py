@@ -26,5 +26,6 @@ def create_dns_record(email, api_token, zone_id, **kwargs):
         try:
             dns_records = cf.zones.dns_records.post(zone_id, data=dns)
             print('Creating DNS Records - {name}: DONE'.format(name=dns_records['name']))
+            return dns_records['name']
         except CloudFlare.exceptions.CloudFlareAPIError as e:
             print('API Error: {error}'.format(error=e))
