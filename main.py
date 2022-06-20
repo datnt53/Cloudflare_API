@@ -50,10 +50,10 @@ def main():
     get_page_rules(email, api_token, zone_info[0])
 
     # Creating DNS Record
-    dns_records.create_dns_record(email, api_token, zone_info[0], **globals.DNS_DATA)
+    dns_name = dns_records.create_dns_record(email, api_token, zone_info[0], **globals.DNS_DATA)
 
     # Creating Spectrum
-    spectrums.create_spectrums(email, api_token, zone_info[0], **globals.DNS_DATA)
+    spectrums.create_spectrums(email, api_token, zone_info[0], dns_name, **globals.DNS_DATA)
 
     # Creating firewall rules
     firewall_rules.create_firewall_rules(email, api_token, zone_info[0], **globals.DNS_DATA)
